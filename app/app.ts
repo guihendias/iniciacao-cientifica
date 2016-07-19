@@ -14,7 +14,7 @@ import {LoginPage} from './pages/login/login';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
   rootPage: any = TabsPage;
-  pages: Array<{title: string, component: any}>;
+  pages: Array<{title: string, component: any, icon: string}>;
 
    constructor(
      private platform: Platform,
@@ -24,10 +24,10 @@ export class MyApp {
 
      // set our app's pages
      this.pages = [
-       { title: 'Home', component: HelloIonicPage },
-       { title: 'List Example', component: ListPage },
-       { title: 'Login', component: LoginPage },
-       { title: 'Tabs', component: TabsPage }
+       { title: 'Home', component: HelloIonicPage, icon: 'home' },
+       { title: 'List Example', component: ListPage, icon: 'list' },
+       { title: 'Login', component: LoginPage, icon:'log-in' },
+       { title: 'Tabs', component: TabsPage, icon:'menu' }
      ];
    }
 
