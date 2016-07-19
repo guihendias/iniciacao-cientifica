@@ -1,0 +1,16 @@
+<ion-header>
+    <ion-toolbar primary>
+        <button (click)="voltar()">Go Back</button>
+        <ion-title>Aplicativo</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+ <div *ngIf="selectedItem" class="selection">
+    <b>{{selectedItem.title}}</b>
+    <ion-icon name="{{selectedItem.icon}}"></ion-icon>
+    <div>
+      You navigated here from <b>{{selectedItem.title}}</b>
+    </div>
+  </div>
+</ion-content>
