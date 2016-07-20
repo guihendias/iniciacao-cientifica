@@ -24,7 +24,7 @@ export class MyApp {
 
      // set our app's pages
      this.pages = [
-       { title: 'Home', component: HelloIonicPage, icon: 'home' },
+       { title: 'Home', component: HomePage, icon: 'home' },
        { title: 'List Example', component: ListPage, icon: 'list' },
        { title: 'Login', component: LoginPage, icon:'log-in' },
        { title: 'Tabs', component: TabsPage, icon:'menu' }

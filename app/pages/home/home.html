@@ -1,7 +1,12 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>Home</ion-title>
-  </ion-navbar>
+    <ion-toolbar primary>
+      <ion-buttons left>
+          <button (click)="voltar()">
+              <ion-icon name="arrow-back"></ion-icon>
+          </button>
+      </ion-buttons>
+        <ion-title>Aplicativo</ion-title>
+    </ion-toolbar>
 </ion-header>
 
 <ion-content padding class="home">
@@ -14,4 +19,10 @@
     Take a look at the <code>app/</code> directory to add or change tabs,
     update any existing page or create new pages.
   </p>
+  <button (click)="scannear()">
+    Scanear
+  </button>
+  <button (click)="mostrar()">
+    Mostrar
+  </button>
 </ion-content>
