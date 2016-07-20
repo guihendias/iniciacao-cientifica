@@ -2,6 +2,7 @@ import {Component} from '@angular/core'
 import {HelloIonicPage} from '../hello-ionic/hello-ionic';
 import {LoginPage} from '../login/login';
 import {AboutPage} from '../about/about';
+import {BarcodeScanner} from 'ionic-native';
 
 @Component({
   templateUrl: 'build/pages/tabs/tabs.html'
@@ -19,4 +20,12 @@ export class TabsPage {
     this.tab2Root = LoginPage;
     this.tab3Root = AboutPage;
   }
+  scannear() {
+      BarcodeScanner.scan().then((barcodeData) => {
+          alert(JSON.stringify(barcodeData));
+      }, (err) => {
+          alert(err);
+      });
+  }
+
 }
