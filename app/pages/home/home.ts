@@ -1,19 +1,20 @@
 import {Component} from '@angular/core';
 import {NavController} from 'ionic-angular';
 import {BarcodeScanner,ActionSheet} from 'ionic-native';
+import {TabsPage} from '../tabs/tabs';
 
 @Component({
     templateUrl: 'build/pages/home/home.html'
 })
 export class HomePage {
   buttonLabels = ['Share via Facebook', 'Share via Twitter'];
-  
+
     constructor(private nav: NavController) {
 
     }
     scannear() {
         BarcodeScanner.scan().then((barcodeData) => {
-            alert(barcodeData);
+            alert(JSON.stringify(barcodeData));
         }, (err) => {
             alert(err);
         });
@@ -30,6 +31,6 @@ export class HomePage {
         });
     }
     voltar() {
-        this.nav.pop();
+        this.nav.push(TabsPage);
     }
 }
