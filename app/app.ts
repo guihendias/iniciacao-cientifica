@@ -6,7 +6,7 @@ import {HelloIonicPage} from './pages/hello-ionic/hello-ionic';
 import {ListPage} from './pages/list/list';
 import {TabsPage} from './pages/tabs/tabs';
 import {LoginPage} from './pages/login/login';
-
+import {UtilServices} from './services/UtilServices';
 
 @Component({
   templateUrl: './build/app.html'
@@ -45,4 +45,4 @@ export class MyApp {
    }
 }
 
-ionicBootstrap(MyApp);
+ionicBootstrap(MyApp,[UtilServices]);
