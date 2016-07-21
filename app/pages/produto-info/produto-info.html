@@ -1,0 +1,28 @@
+<ion-header>
+    <ion-toolbar primary>
+      <ion-buttons left>
+          <button (click)="voltar()">
+              <ion-icon name="arrow-back"></ion-icon>
+          </button>
+      </ion-buttons>
+        <ion-title>Aplicativo</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+
+<ion-content padding>
+  <ion-card>
+    <img width="100%" src="{{produto.thumbnail}}" />
+  <ion-card-content>
+    <ion-card-title>
+    {{produto.nome}}
+      </ion-card-title>
+    <p>
+      Menor valor: {{produto.precoMin | currency:'BRL':true:'3.2-2'}}
+    </p>
+    <p>
+      Maior valor: {{produto.precoMax | currency:'BRL':true:'3.2-2'}}
+    </p>
+  </ion-card-content>
+</ion-card>
+</ion-content>
