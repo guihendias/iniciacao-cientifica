@@ -1,6 +1,16 @@
-.md ion-tabs {
-      top: 56px !important;
+.md {
+    ion-tabs {
+        top: 56px !important;
+    }
+    scroll-content {
+        padding-bottom: 60px;
+    }
 }
-.wp ion-tabs{
-  top: 46px !important;
+.wp {
+    ion-tabs {
+        top: 46px !important;
+    }
+    scroll-content {
+        padding-bottom: 60px;
+    }
 }

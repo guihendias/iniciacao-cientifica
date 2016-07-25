@@ -23,17 +23,17 @@ export class HomePage {
         });
     }
 
-mostrar() {
-    ActionSheet.show({
-        'title': 'What do you want with this image?',
-        'buttonLabels': this.buttonLabels,
-        'addCancelButtonWithLabel': 'Cancel',
-        'addDestructiveButtonWithLabel': 'Delete'
-    }).then(buttonIndex => {
-        console.log('Button pressed: ' + this.buttonLabels[buttonIndex - 1]);
-    });
-}
-voltar() {
-    this.nav.push(TabsPage);
-}
+    mostrar() {
+        ActionSheet.show({
+            'title': 'What do you want with this image?',
+            'buttonLabels': this.buttonLabels,
+            'addCancelButtonWithLabel': 'Cancel',
+            'addDestructiveButtonWithLabel': 'Delete'
+        }).then(buttonIndex => {
+            console.log('Button pressed: ' + this.buttonLabels[buttonIndex - 1]);
+        });
+    }
+    voltar() {
+        this.nav.push(TabsPage);
+    }
 }

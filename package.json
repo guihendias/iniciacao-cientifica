@@ -37,7 +37,8 @@
     "cordova-plugin-statusbar",
     "ionic-plugin-keyboard",
     "phonegap-plugin-barcodescanner",
-    "cordova-plugin-actionsheet"
+    "cordova-plugin-actionsheet",
+    "cordova-plugin-x-socialsharing"
   ],
   "cordovaPlatforms": [
     "android"

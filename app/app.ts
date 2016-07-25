@@ -4,9 +4,11 @@ import {StatusBar} from 'ionic-native';
 import {HomePage} from './pages/home/home';
 import {HelloIonicPage} from './pages/hello-ionic/hello-ionic';
 import {ListPage} from './pages/list/list';
+import {AboutPage} from './pages/about/about';
 import {TabsPage} from './pages/tabs/tabs';
 import {LoginPage} from './pages/login/login';
 import {UtilServices} from './services/UtilServices';
+import {InviteFriendsPage} from'./pages/invite-friends/invite-friends';
 
 @Component({
   templateUrl: './build/app.html'
@@ -25,15 +27,18 @@ export class MyApp {
      // set our app's pages
      this.pages = [
        { title: 'Home', component: HomePage, icon: 'home' },
-       { title: 'List Example', component: ListPage, icon: 'list' },
-       { title: 'Login', component: LoginPage, icon:'log-in' },
-       { title: 'Tabs', component: TabsPage, icon:'menu' }
+       { title: 'Conquistas', component: ListPage, icon: 'trophy' },
+       { title: 'Configurações', component: ListPage, icon: 'settings' },
+       { title: 'Convide um amigo', component: InviteFriendsPage, icon:'person-add' },
+       { title: 'Relatar um Problema', component: LoginPage, icon:'alert' },
+       { title: 'Sobre', component: AboutPage, icon:'information-circle' },
+       { title: 'Sair', component: TabsPage, icon:'log-out' }
      ];
    }
 
    initializeApp() {
      this.platform.ready().then(() => {
-       StatusBar.styleDefault();
+      StatusBar.backgroundColorByHexString('#83AEF7');
      });
    }
 

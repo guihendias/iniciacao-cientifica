@@ -3,7 +3,7 @@ import {HelloIonicPage} from '../hello-ionic/hello-ionic';
 import {LoginPage} from '../login/login';
 import {AboutPage} from '../about/about';
 import {BarcodeScanner} from 'ionic-native';
-import {NavController} from 'ionic-angular';
+import {NavController,Loading} from 'ionic-angular';
 import {UtilServices} from '../../services/UtilServices';
 import {Http} from '@angular/http'
 import {Produto} from '../../model/Produto';
@@ -13,6 +13,11 @@ import {ProdutoInfo} from '../produto-info/produto-info';
     templateUrl: 'build/pages/tabs/tabs.html'
 })
 export class TabsPage {
+   loading = Loading.create({
+     content: "Please wait...",
+     duration: 2500
+   });
+
     produto:Produto;
     private tab1Root: any;
     private tab2Root: any;
@@ -29,7 +34,8 @@ export class TabsPage {
     }
     scannear() {
         BarcodeScanner.scan().then((barcodeData) => {
-            this.util.getProduto(barcodeData).subscribe((data) => {
+          this.nav.present(this.loading);
+            this.util.getProduto(barcodeData.text).subscribe((data) => {
                 this.produto = new Produto(data);
                 this.nav.push(ProdutoInfo, { 'produto': this.produto });
             });
