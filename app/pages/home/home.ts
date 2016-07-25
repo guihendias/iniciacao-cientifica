@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 import {NavController} from 'ionic-angular';
-import {BarcodeScanner, ActionSheet} from 'ionic-native';
+import {BarcodeScanner,Badge, ActionSheet} from 'ionic-native';
 import {TabsPage} from '../tabs/tabs';
 import {Produto} from '../../model/Produto';
 import {UtilServices} from '../../services/UtilServices';
@@ -15,6 +15,12 @@ export class HomePage {
     produto: Produto;
     constructor(private nav: NavController, private util: UtilServices) {
 
+    }
+    aumentar(){
+      Badge.increase(1);
+    }
+    zerar(){
+      Badge.clear();
     }
     scannear() {
         this.util.getProduto('9788576080855').subscribe((data) => {
