@@ -2,7 +2,7 @@ import {Component} from '@angular/core'
 import {HelloIonicPage} from '../hello-ionic/hello-ionic';
 import {LoginPage} from '../login/login';
 import {AboutPage} from '../about/about';
-import {BarcodeScanner} from 'ionic-native';
+import {BarcodeScanner,Toast} from 'ionic-native';
 import {NavController,Loading} from 'ionic-angular';
 import {UtilServices} from '../../services/UtilServices';
 import {Http} from '@angular/http'
@@ -36,8 +36,15 @@ export class TabsPage {
         BarcodeScanner.scan().then((barcodeData) => {
           this.nav.present(this.loading);
             this.util.getProduto(barcodeData.text).subscribe((data) => {
+              console.log(data);
+              if(data != undefined){
                 this.produto = new Produto(data);
                 this.nav.push(ProdutoInfo, { 'produto': this.produto });
+              } else {
+                Toast.showShortBottom("Produto não encontrado").subscribe((toast) => {
+                  console.log(toast);
+                });
+              }
             });
         }, (err) => {
             alert(err);

@@ -38,7 +38,10 @@
     "ionic-plugin-keyboard",
     "phonegap-plugin-barcodescanner",
     "cordova-plugin-actionsheet",
-    "cordova-plugin-x-socialsharing"
+    "cordova-plugin-x-socialsharing",
+    "cordova-plugin-badge",
+    "cordova-plugin-crosswalk-webview",
+    "cordova-plugin-x-toast"
   ],
   "cordovaPlatforms": [
     "android"

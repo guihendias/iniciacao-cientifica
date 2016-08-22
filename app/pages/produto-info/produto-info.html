@@ -18,7 +18,7 @@
                 {{produto.nome}}
             </ion-card-title>
             <ion-list no-lines>
-                <ion-item-sliding>
+                <ion-item-sliding *ngIf="produto.precoMin != undefined">
                     <ion-item>
                       <ion-icon name="pricetag" margin-right favorite></ion-icon>
                         Menor valor: {{produto.precoMin | currency:'BRL':true:'1.2-2'}}
@@ -28,6 +28,9 @@
                         Maior valor: {{produto.precoMax | currency:'BRL':true:'1.2-2'}}
                     </ion-item>
                 </ion-item-sliding>
+                <ion-item *ngIf="produto.precoMin == undefined">
+                  Não há ofertas para esse produto.
+                </ion-item>
             </ion-list>
         </ion-card-content>
     </ion-card>

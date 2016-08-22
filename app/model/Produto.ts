@@ -12,6 +12,10 @@ export class Produto {
         this.thumbnail = produtoInfo.product[0].product.thumbnail.url;
         this.precoMin = Number(produtoInfo.product[0].product.pricemin);
         this.precoMax = Number(produtoInfo.product[0].product.pricemax);
-        this.codigoDeBarras = produtoInfo.offer[0].offer.sku;
+        if(produtoInfo.product[0].offer != undefined){
+          this.codigoDeBarras = produtoInfo.offer[0].offer.sku;
+      } else {
+          this.codigoDeBarras = 'indisponivel';
+      }
     }
 }
