@@ -1,0 +1,47 @@
+<ion-header>
+    <ion-toolbar primary>
+        <ion-buttons left>
+            <button (click)="voltar()">
+                <ion-icon name="arrow-back"></ion-icon>
+            </button>
+        </ion-buttons>
+        <ion-title>Configurações</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+
+
+<ion-content>
+    <ion-list>
+        <ion-item-group>
+            <ion-item-divider light>Geral</ion-item-divider>
+            <ion-item>
+                <ion-label>Notificações</ion-label>
+                <ion-toggle></ion-toggle>
+            </ion-item>
+            <ion-item>
+                <ion-label>Sons</ion-label>
+                <ion-toggle warn></ion-toggle>
+            </ion-item>
+            <ion-item>
+                <ion-label>Perfil Público</ion-label>
+                <ion-toggle danger></ion-toggle>
+            </ion-item>
+        </ion-item-group>
+        <ion-item-group>
+            <ion-item-divider light>Perfil</ion-item-divider>
+            <ion-item>
+                <ion-label>Notificações</ion-label>
+                <ion-toggle></ion-toggle>
+            </ion-item>
+            <ion-item>
+                <ion-label>Sons</ion-label>
+                <ion-toggle warn></ion-toggle>
+            </ion-item>
+            <ion-item>
+                <ion-label>Perfil Público</ion-label>
+                <ion-toggle danger></ion-toggle>
+            </ion-item>
+        </ion-item-group>
+    </ion-list>
+</ion-content>

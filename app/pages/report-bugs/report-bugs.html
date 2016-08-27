@@ -1,0 +1,30 @@
+<ion-header>
+    <ion-toolbar primary>
+        <ion-buttons left>
+            <button (click)="voltar()">
+                <ion-icon name="arrow-back"></ion-icon>
+            </button>
+        </ion-buttons>
+        <ion-title>Relatar um problema</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+    <h3>*algum texto ou img*</h3>
+    <ion-list>
+        <ion-item>
+            <ion-label>Tipo</ion-label>
+            <ion-select [(ngModel)]="gaming">
+                <ion-option value="0">Erro</ion-option>
+                <ion-option value="1">Ajuste</ion-option>
+                <ion-option value="2">Melhoria</ion-option>
+            </ion-select>
+        </ion-item>
+        <ion-item>
+            <ion-textarea style="height:200px" placeholder="Deixe sua mensagem...">
+            </ion-textarea>
+        </ion-item>
+    </ion-list>
+
+    <button style="width: 100px;margin: auto;display: block;"secondary outline>Enviar</button>
+</ion-content>
