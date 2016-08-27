@@ -9,6 +9,8 @@ import {TabsPage} from './pages/tabs/tabs';
 import {LoginPage} from './pages/login/login';
 import {UtilServices} from './services/UtilServices';
 import {InviteFriendsPage} from'./pages/invite-friends/invite-friends';
+import {ReportBugsPage} from './pages/report-bugs/report-bugs';
+import {ConfigPage} from './pages/config/config';
 
 @Component({
   templateUrl: './build/app.html'
@@ -28,9 +30,9 @@ export class MyApp {
      this.pages = [
        { title: 'Home', component: HomePage, icon: 'home' },
        { title: 'Conquistas', component: ListPage, icon: 'trophy' },
-       { title: 'Configurações', component: ListPage, icon: 'settings' },
+       { title: 'Configurações', component: ConfigPage, icon: 'settings' },
        { title: 'Convide um amigo', component: InviteFriendsPage, icon:'person-add' },
-       { title: 'Relatar um Problema', component: LoginPage, icon:'alert' },
+       { title: 'Relatar um Problema', component: ReportBugsPage, icon:'alert' },
        { title: 'Sobre', component: AboutPage, icon:'information-circle' },
        { title: 'Sair', component: TabsPage, icon:'log-out' }
      ];

@@ -9,7 +9,7 @@
 
 <ion-content padding class="getting-started">
   <ion-card *ngFor="let oferta of ofertas">
-    <img src="{{oferta.imagem}}"/>
+    <img src="{{oferta.imagem}}" (click)="viewImage(oferta.imagem, oferta.name)"/>
     <ion-card-content>
       <ion-card-title>
         {{oferta.nome}}

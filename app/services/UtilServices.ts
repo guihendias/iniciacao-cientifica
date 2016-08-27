@@ -19,6 +19,7 @@ export class UtilServices {
         return this.http.get('http://sandbox.buscape.com.br/service/findOfferList/586f7a657574375237514d3d/?barcode='+codigo+'&format=json')
         .map(data => data.json());
     }
+
   /*  getProduto(codigo:string) {
         this.http.get('http://sandbox.buscape.com.br/service/findOfferList/586f7a657574375237514d3d/?barcode='+codigo+'&format=json').subscribe((data) => {
             this.produto = new Produto(data.json());

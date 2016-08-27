@@ -17,7 +17,8 @@ export class HomePage {
 
     }
     aumentar(){
-      Badge.increase(1);
+      console.log(Badge.hasPermission());
+      Badge.set(1);
     }
     zerar(){
       Badge.clear();

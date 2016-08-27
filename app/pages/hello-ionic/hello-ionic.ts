@@ -1,5 +1,5 @@
 import {Page} from 'ionic-angular';
-
+import { PhotoViewer } from 'ionic-native';
 
 @Page({
   templateUrl: 'build/pages/hello-ionic/hello-ionic.html'
@@ -21,6 +21,10 @@ export class HelloIonicPage {
   ];
   constructor() {
 
+  }
+
+  viewImage(src,name){
+    PhotoViewer.show(src, name, {share: false});
   }
 
 }
