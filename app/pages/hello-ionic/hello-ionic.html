@@ -1,26 +1,35 @@
-
 <ion-navbar *navbar>
-  <button menuToggle>
+    <button menuToggle>
     <ion-icon name="menu"></ion-icon>
   </button>
-  <ion-title>App</ion-title>
+    <ion-title>App</ion-title>
 </ion-navbar>
 
 
-<ion-content padding class="getting-started">
-  <ion-card *ngFor="let oferta of ofertas">
-    <img src="{{oferta.imagem}}" (click)="viewImage(oferta.imagem, oferta.name)"/>
-    <ion-card-content>
-      <ion-card-title>
-        {{oferta.nome}}
-        </ion-card-title>
-      <p>
-        {{oferta.descricao}}
-      </p>
-      <ion-buttons>
-        <button no-margin no-padding secondary clear><ion-icon name="eye"></ion-icon>Ver Oferta</button>
-        <button clear><ion-icon name="share-alt"></ion-icon>Compartilhar</button>
-      </ion-buttons>
-    </ion-card-content>
-  </ion-card>
+<ion-content class="getting-started">
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+    <ion-list [virtualScroll]="ofertas">
+        <ion-item *virtualItem="let oferta" no-lines>
+            <ion-card>
+                <img src="{{oferta.thumbnail}}" (click)="viewImage(oferta.thumbnail, oferta.name)" />
+                <ion-card-content>
+                    <ion-card-title text-center>
+                        {{products[oferta.product].name}}
+                    </ion-card-title>
+                    <p text-center>
+                        {{oferta.description}}
+                    </p>
+                    <p class="sale" text-center>
+                        {{oferta.price | currency:"BRL":true:1.2}}
+                    </p>
+                    <ion-buttons>
+                        <button no-margin no-padding secondary clear (click)="openMap(stores[oferta.store-1])"><ion-icon name="eye"></ion-icon>Ver Oferta</button>
+                        <button (click)="shareProduct(oferta)" clear><ion-icon name="share-alt"></ion-icon>Compartilhar</button>
+                    </ion-buttons>
+                </ion-card-content>
+            </ion-card>
+        </ion-item>
+    </ion-list>
 </ion-content>

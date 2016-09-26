@@ -4,9 +4,13 @@
         <ion-card-content>
             <ion-card-title>
                 {{produto.nome}}
+                {{produto.codigoDeBarras}}
+                <br />
+                <a (click)="openVideo('yawo5SDqnQQ')">ver review</a>
             </ion-card-title>
             <ion-list no-lines>
                 <ion-item-sliding *ngIf="produto.precoMin > 0">
+                  Valores no Buscapé:
                     <ion-item>
                       <ion-icon name="pricetag" margin-right favorite></ion-icon>
                         Menor valor: {{produto.precoMin | currency:'BRL':true:'1.2-2'}}
@@ -17,8 +21,22 @@
                     </ion-item>
                 </ion-item-sliding>
                 <ion-item-divider light *ngIf="!(produto.precoMin > 0)">
-                  Não há ofertas para esse produto.
-                </ion-item-divider >
+                  Não há ofertas no Buscapé.
+                </ion-item-divider>
+                <ion-item-sliding *ngFor="let local of localProdutos">
+                  Valores nas lojas físicas:
+                    <ion-item>
+                      <ion-icon name="pricetag" margin-right favorite></ion-icon>
+                        Menor valor: {{local.precoMin | currency:'BRL':true:'1.2-2'}}
+                    </ion-item>
+                    <ion-item>
+                      <ion-icon name="pricetag" margin-right danger></ion-icon>
+                        Maior valor: {{local.precoMax | currency:'BRL':true:'1.2-2'}}
+                    </ion-item>
+                </ion-item-sliding>
+                <ion-item-divider light *ngIf="localProdutos == undefined || localProdutos.length == 0">
+                  Não há ofertas locais.
+                </ion-item-divider>
             </ion-list>
         </ion-card-content>
     </ion-card>

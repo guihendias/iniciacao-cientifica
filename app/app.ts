@@ -11,18 +11,22 @@ import {UtilServices} from './services/UtilServices';
 import {InviteFriendsPage} from'./pages/invite-friends/invite-friends';
 import {ReportBugsPage} from './pages/report-bugs/report-bugs';
 import {ConfigPage} from './pages/config/config';
+import { Fire } from './services/Fire';
 
 @Component({
   templateUrl: './build/app.html'
 })
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
-  rootPage: any = TabsPage;
+  rootPage: any = LoginPage;
   pages: Array<{title: string, component: any, icon: string}>;
+  user:any ;
 
    constructor(
      private platform: Platform,
-     private menu: MenuController
+     private menu: MenuController,
+     private util: UtilServices,
+     private fire: Fire
    ) {
      this.initializeApp();
 
@@ -36,6 +40,7 @@ export class MyApp {
        { title: 'Sobre', component: AboutPage, icon:'information-circle' },
        { title: 'Sair', component: TabsPage, icon:'log-out' }
      ];
+      this.user = fire.user;
    }
 
    initializeApp() {
@@ -52,4 +57,4 @@ export class MyApp {
    }
 }
 
-ionicBootstrap(MyApp,[UtilServices]);
+ionicBootstrap(MyApp,[UtilServices, Fire]);

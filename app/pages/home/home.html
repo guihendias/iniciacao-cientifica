@@ -1,35 +1,37 @@
 <ion-header>
     <ion-toolbar primary>
-      <ion-buttons left>
-          <button (click)="voltar()">
+        <ion-buttons left>
+            <button (click)="voltar()">
               <ion-icon name="arrow-back"></ion-icon>
           </button>
-      </ion-buttons>
+        </ion-buttons>
         <ion-title>Aplicativo</ion-title>
     </ion-toolbar>
 </ion-header>
 
 <ion-content padding class="home">
-  {{retorno}}
-  <h2>Welcome to Ionic!</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
-  </p>
-  <p>
-    Take a look at the <code>app/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
-  <button (click)="scannear()">
+    {{retorno}}
+    <h2>Welcome to Ionic!</h2>
+    <p>
+        This starter project comes with simple tabs-based layout for apps that are going to primarily use a Tabbed UI.
+    </p>
+    <p>
+        Take a look at the <code>app/</code> directory to add or change tabs, update any existing page or create new pages.
+    </p>
+    <button (click)="scannear()">
     Scanear
   </button>
-  <button (click)="mostrar()">
+    <button (click)="mostrar()">
     Mostrar
   </button>
-  <button (click)="aumentar()">
+    <button (click)="aumentar()">
     Aumentar
   </button>
-  <button (click)="zerar()">
+    <button (click)="zerar()">
     Zerar
   </button>
+    <button default (click)="createBanner()">Create Banner</button>
+    <button secondary (click)="showBanner('bottom')">Show Banner</button>
+    <button dark (click)="hideBanner()">Hide Banner</button>
+    <button light (click)="showInterstitial()">Show Interstitial</button>
 </ion-content>

@@ -1,13 +1,26 @@
-import {Page, Platform} from 'ionic-angular';
+import { Component } from '@angular/core';
+import { NavController } from 'ionic-angular';
+import {UtilServices} from '../../services/UtilServices';
+import {TabsPage} from '../tabs/tabs';
+import {Fire} from '../../services/fire';
 
-@Page({
-	templateUrl: './build/pages/login/login.html'
+@Component({
+  templateUrl: 'build/pages/login/login.html',
 })
 export class LoginPage {
-	user: string = "login";
-	isAndroid: boolean = false;
 
-	constructor(platform: Platform) {
-		this.isAndroid = platform.is('android');
-	}
+  constructor(private navCtrl: NavController, private util : UtilServices, private fire: Fire) {
+
+  }
+  login(){
+    this.util.facebookLogin(response => {
+         this.fire.login(response.accessToken, () => {
+           this.navCtrl.setRoot(TabsPage);
+         }, error => {
+           alert(error);
+         })
+       }, error => {
+         alert(error.errorMessage);
+       });
+  }
 }
